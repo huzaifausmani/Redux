@@ -8,14 +8,17 @@ import { createSlice } from "@reduxjs/toolkit";
 export const counterSlice = createSlice({
     name: 'counter',
     initialState: {
-        value: 0
+        value: 0,
+        displayInc: true
     },
     reducers: {
         increment: (state) => {
-            state.value += 7
+            state.value = "Huh, You thought this increments... Gotcha! Press Decrement"
+            state.displayInc = false
         },
         decrement: (state) => {
-            state.value -= 7
+            state.value = "Gotcha again.... Lmao, this doesn't Decrement"
+            state.displayInc = true
         }
     }
 })
