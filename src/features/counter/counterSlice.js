@@ -13,11 +13,17 @@ export const counterSlice = createSlice({
     },
     reducers: {
         increment: (state) => {
-            state.value = "Huh, You thought this increments... Gotcha! Press Decrement"
+            if (state.value === 0) { state.value = "Huh, You thought this increments... Gotcha! Press Decrement" }
+            if (state.value.includes("again")) { state.value = "Ju tha yhin tk tha..." }
             state.displayInc = false
+            if (state.value.includes("Bro")) {
+                state.value = 0
+                state.displayInc = true
+            }
         },
         decrement: (state) => {
-            state.value = "Gotcha again.... Lmao, this doesn't Decrement"
+            if (state.value.includes("Ju")) { state.value = "Seriously Bro, Bs yhin tk tha..." }
+            else { state.value = "Gotcha again.... Lmao, this doesn't Decrement, Don't Press Increment" }
             state.displayInc = true
         }
     }
