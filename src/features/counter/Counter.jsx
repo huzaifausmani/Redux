@@ -7,7 +7,7 @@ export default function Counter() {
     return (
         <div className="App">
             <header className="Counter-body">
-                <span style={{ fontWeight: 600 }}>Counter : <span style={{ color: '#ff8a1e' }}>{counter.value}</span></span>
+                <span style={{ color: '#ff8a1e' }}>{counter.value}</span>
                 <div className="Counter-buttons">
                     {counter.displayInc ?
                         <button className="Counter-button w3-animate-zoom" onClick={() => { dispatch(increment()) }}>
